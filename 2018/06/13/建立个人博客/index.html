@@ -261,7 +261,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count">353</span> / Reading time: <span class="post-count">1 min</span></span>
+                        <span>Word count: <span class="post-count">574</span> / Reading time: <span class="post-count">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -400,10 +400,15 @@ height:50vh;
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//Git</span><br><span class="line">brew install git</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//nvm、Nodejs</span><br><span class="line">//先安装Nodejs的版本管理器nvm</span><br><span class="line">brew install nvm</span><br><span class="line">//为了能使用nvm命令还需要执行下面命令</span><br><span class="line">mkdir ~/.nvm</span><br><span class="line">export NVM_DIR=~/.nvm</span><br><span class="line">. $(brew --prefix nvm)/nvm.sh</span><br><span class="line">//完成后用下面命令安装Nodejs</span><br><span class="line">nvm install 11（这里11是版本号，根据hexo需要的版本自己按需安装即可）</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//安装Hexo</span><br><span class="line">sudo npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<p>到这里我们已经生成了本地的博客文件了<br>进入博客文件夹执行以下命令  </p>
-<pre><code>hexo s
-</code></pre><p>再用浏览器访问<a href="https://localhost:4000就可以看到你创建的博客啦" target="_blank" rel="noopener">https://localhost:4000就可以看到你创建的博客啦</a><br>（注意：这里运行hexo的时候可能会报error的错误，原因可能是因为nodejs版本过低，此时查看log看看hexo支持的最低nodejs版本，把nodejs版本切换到能支持hexo的版本再重新安装hexo就可以了）</p>
-<p>-<br><a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题下载</a><br><a href="http://theme-next.iissnan.com/getting-started.html#theme-settings" target="_blank" rel="noopener">设置教程</a></p>
+<p>到这里我们已经生成了本地的博客文件了<br>进入博客文件夹执行以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br><span class="line">```  </span><br><span class="line">再用浏览器访问https://localhost:4000就可以看到你创建的博客啦  </span><br><span class="line"></span><br><span class="line">-</span><br><span class="line">附上主题的地址和设置的教程  </span><br><span class="line">&lt;a href=&quot;https://hexo.io/themes/&quot;&gt;主题下载&lt;/a&gt;  </span><br><span class="line">&lt;a href=&quot;http://theme-next.iissnan.com/getting-started.html#theme-settings&quot;&gt;设置教程&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">##记录一下遇到的问题</span><br></pre></td></tr></table></figure></p>
+<p>Local hexo not found in<br>npm install hexo –save<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这里运行hexo的时候可能会报error的错误，原因可能是因为nodejs版本过低，此时查看log看看hexo支持的最低nodejs版本，把nodejs版本切换到能支持hexo的版本再重新安装hexo就可以了</span><br></pre></td></tr></table></figure></p>
+<p>error: RPC failed; curl 56 LibreSSL SSL_read: SSL_ERROR_SYSCALL, errno 60<br>fatal: The remote end hung up unexpectedly<br>fatal: The remote end hung up unexpectedly<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在执行hexo d的时候可能会遇到The remote end hung up unexpectedly的问题，这个问题是出自git本身，若你上传的文件过大可以试试以下两句命令,即把git的推送大小设置为500M</span><br></pre></td></tr></table></figure></p>
+<p> git config http.postBuffer 524288000<br> git config https.postBuffer 524288000<br><code>`</code><br>若不是因为文件过大，可能是git本身出了问题<br>如果hexo d推送不到github或者卡死，可以尝试以下步骤:</p>
+<ul>
+<li>删除根目录下的 .deploy_git 文件夹</li>
+<li>删除 db.json 文件</li>
+<li>执行hexo clean &amp;&amp; hexo g &amp;&amp; hexo d –debug</li>
+</ul>
 
     </article>
     <!-- license  -->
