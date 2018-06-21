@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta name="Cache-Control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Hello World · Gray&#39;s coding life.</title>
+    <title>iOS组件化架构 · Gray&#39;s coding life.</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -210,7 +210,7 @@
                 <a href="/" >Gray&#39;s coding life.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Hello World</a>
+                <a href="#" class="post-name">iOS组件化架构</a>
             </div>
     </div>
     
@@ -242,7 +242,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Hello World
+            iOS组件化架构
             <!-- 404 -->
             
         </h1>
@@ -259,14 +259,20 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "iOS">iOS</a>
+    
+</div>
+                
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count">78</span> / Reading time: <span class="post-count">1 min</span></span>
+                        <span>Word count: <span class="post-count">820</span> / Reading time: <span class="post-count">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/06/12</span>
+                    <span class="post-intro-time">2018/06/13</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -390,23 +396,40 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>###放下叮铛这个项目也有一段时间了，现在写下这篇文章来分享一下组件化开发的一些心得。</p>
+<ol>
+<li>什么是组件化开发？<br>组件化开发是把各个关键的组件或功能分拆成一个单独的库来开发维护。<br>为了降低项目的耦合度，复用性更高，可以脱离主工程开发而采用的一种开发模式。</li>
+<li>组件化开发有什么好处？  <ul>
+<li>在做比较大的项目的时候，可以更加方便地管理各个功能。  </li>
+<li>其次在同时需要上几个大功能的情况下，如果都依赖于主工程去做开发，会出现两个功能上线的时候有冲突的问题。</li>
+<li>另外，某组件若依赖于主工程开发，则主工程有逻辑变动的时候，影响到组件的地方也需要人去维护。而功能库则是只开放api给主工程使用，不会直接往库里添加某些专用的业务代码。若有需要，也是另外开放一个api供主工程使用。</li>
+</ul>
+</li>
+</ol>
+<p>##如何设计一个组件化架构<br>一个优秀的组件化架构应该是能把所有功能分拆到各个库，而主工程只是一个<strong>桥梁</strong>或者说是<strong>容器</strong>，去装载贯通各个功能库。库与库之间可以有依赖关系，但是不能相互依赖。比如说一个项目里面有最基本的网络请求类，图片加载类，约束类，公用方法类等…这些类可以抽出来作为BaseLibrary，即<strong>基础库</strong>。（有些工程师可能会觉得这些基本的类可以保留在主工程里，那么开发别的库需要用到这些类的时候还是变相地依赖了主工程。）  </p>
+<p>下面列举一下一些可能可以抽出来的功能库：</p>
+<ul>
+<li>基础库（网络请求类，布局类，公用方法类，基础模型类）</li>
+<li>视图库（基础视图类，特效视图类，动画类）</li>
+<li>分享库（集成的第三方分享功能如微信、QQ、微博等）</li>
+<li>支付库（集成的支付手段如支付宝、微信、银联、IAP等）</li>
+<li>音频库（集成音乐播放管理）</li>
+<li>视频库（集成播放、播放器、直播等音视频相关的库，也可和音频库合并成音视频库）</li>
+<li>用户库（集成登录、修改信息、储存用户信息）</li>
+<li>地图库（定位、反编码坐标、地图视图）</li>
+<li>活动库（各种需求活动产生的一次性类库）  </li>
+</ul>
+<p> 还有其他一些根据不同APP需求功能来分拆的库例如：<br> 电商类的商品库、购物车库<br> 阅读类的阅读库<br> 地图类的导航库<br> 资讯类的资讯库、评论库<br> 等等。。。</p>
+<p>相比臃肿的大工程，细分后的组件化工程使用和维护起来也是非常简单。组件化主要用到的工具便是cocoapods。依靠cocoapods可以方便地管理本地的代码和依赖的第三方库，还可以把组件化的库打包成framework方便使用。</p>
+<p>相关博客：<br><a href="https://graydang.github.io/2018/06/15/podpackage">使用podpackage打包工程库</a><br><a href="https://graydang.github.io/2018/06/15/cocoapods">优雅地使用Cocoapods</a></p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者: <a href="https://graydang.github.io">Gray</a>
-            <p>原文链接: <a href="https://graydang.github.io/2018/06/12/hello-world/">https://graydang.github.io/2018/06/12/hello-world/</a>
-            <p>发表日期: <a href="https://graydang.github.io/2018/06/12/hello-world/">June 12th 2018, 6:35:06</a>
+            <p>原文链接: <a href="https://graydang.github.io/2018/06/13/modularization/">https://graydang.github.io/2018/06/13/modularization/</a>
+            <p>发表日期: <a href="https://graydang.github.io/2018/06/13/modularization/">June 13th 2018, 10:03:35</a>
             <p>版权声明: 本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -522,7 +545,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -602,8 +625,17 @@ top:50vh;
         </li>
     
     
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
         <li class="archive-post-item">
-            <span class="archive-post-date">06/12</span><a class="archive-post-title" href= "/2018/06/12/hello-world/" >Hello World</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2018/06/15/cocoapods/" >优雅地使用Cocoapods</a>
         </li>
     
     
@@ -617,7 +649,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2018/06/15/cocoapods/" >优雅地使用Cocoapods</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2018/06/13/modularization/" >iOS组件化架构</a>
         </li>
     
     </div>

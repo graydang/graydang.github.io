@@ -267,7 +267,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count">606</span> / Reading time: <span class="post-count">3 min</span></span>
+                        <span>Word count: <span class="post-count">839</span> / Reading time: <span class="post-count">4 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -405,8 +405,20 @@ height:50vh;
 <p>###podspec文件<br>这里建议用命令行生成podspec文件，格式和注释都比较规范。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod spec create XXX</span><br></pre></td></tr></table></figure>
 <p>接下来看看生成的podspec文件里比较重要的内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">s.name         = &quot;BaseFramework&quot; #工程的名字</span><br><span class="line">s.version      = &quot;0.0.1&quot;  #工程的版本</span><br><span class="line">s.summary      = &quot;Gray&apos;s modularization BaseFramework.&quot;  #工程的摘要</span><br><span class="line">s.description  = &quot;Gray&apos;s BaseFramework demo&quot;  #工程的描述</span><br><span class="line">s.homepage     = &quot;http://graydeng.BaseFramework&quot;  #工程的首页</span><br><span class="line">s.license      = &quot;MIT&quot;  #工程的证书</span><br><span class="line">s.author       = &#123; &quot;Gray&quot; =&gt; &quot;denggray@163.com&quot; &#125; #工程的作者</span><br><span class="line">s.ios.deployment_target = &quot;8.0&quot;  #工程的编译版本</span><br><span class="line">s.source       = &#123; :git =&gt; &quot;http://graydeng/BaseFramework.git&quot;, :tag =&gt; &quot;#&#123;s.version&#125;&quot; &#125;  #工程的git地址</span><br><span class="line">s.source_files  = &quot;Classes&quot;, &quot;Classes/**/*.&#123;h,m&#125;&quot;  #工程需要引入的文件</span><br><span class="line">s.exclude_files = &quot;Classes/Exclude&quot;  #工程不需要引入的文件</span><br><span class="line">s.public_header_files = &quot;Classes/**/*.h&quot;  #工程需要暴露出来的头文件</span><br><span class="line">s.resources = &quot;Resources/*&quot;  #工程需要引入的资源文件（图片，xib等）</span><br><span class="line">s.frameworks = &quot;SomeFramework&quot;, &quot;AnotherFramework&quot;  #工程依赖的framework</span><br><span class="line">s.libraries = &quot;iconv&quot;, &quot;xml2&quot;  #工程依赖的library</span><br><span class="line">s.requires_arc = true  #工程是否用arc规则</span><br><span class="line">s.dependency &quot;AFNetworking&quot;, &quot;~&gt; 3.0&quot;  #工程依赖的第三方库</span><br></pre></td></tr></table></figure>
-<p>封装一个库最重要的还是source_files，把必须用到的文件导入到主工程。<br>其次就是资源文件resources、frameworks、libraries。<br>如果涉及到使用mrc的文件还需要设置一下requires_arc的参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">s.name         = &quot;BaseFramework&quot; #工程的名字</span><br><span class="line">s.version      = &quot;0.0.1&quot;  #工程的版本</span><br><span class="line">s.summary      = &quot;Gray&apos;s modularization BaseFramework.&quot;  #工程的摘要</span><br><span class="line">s.description  = &quot;Gray&apos;s BaseFramework demo&quot;  #工程的描述</span><br><span class="line">s.homepage     = &quot;http://graydeng.BaseFramework&quot;  #工程的首页</span><br><span class="line">s.license      = &quot;MIT&quot;  #工程的证书</span><br><span class="line">s.author       = &#123; &quot;Gray&quot; =&gt; &quot;denggray@163.com&quot; &#125; #工程的作者</span><br><span class="line">s.ios.deployment_target = &quot;8.0&quot;  #工程的编译版本</span><br><span class="line">s.source       = &#123; :git =&gt; &quot;http://graydeng/BaseFramework.git&quot;, :tag =&gt; &quot;#&#123;s.version&#125;&quot; &#125;  #工程的git地址</span><br><span class="line">s.source_files  = &quot;Classes&quot;, &quot;Classes/**/*.&#123;h,m&#125;&quot;  #工程需要引入的文件</span><br><span class="line">s.exclude_files = &quot;Classes/Exclude&quot;  #工程不需要引入的文件</span><br><span class="line">s.public_header_files = &quot;Classes/**/*.h&quot;  #工程需要暴露出来的头文件</span><br><span class="line">s.resources = &quot;Resources/*&quot;  #工程需要引入的资源文件（图片，xib等）</span><br><span class="line">s.resource_bundles = &#123;&apos;Resources&apos; =&gt; &apos;XXX.framework/Resources/XXX.bundle&apos;&#125; #工程需要引入的bundle</span><br><span class="line">s.frameworks = &quot;ImageIO&quot;  #工程依赖的framework</span><br><span class="line">s.vendored_frameworks = [] #工程依赖的第三方framework</span><br><span class="line">s.libraries = &quot;iconv&quot;, &quot;xml2&quot;  #工程依赖的library</span><br><span class="line">s.vendored_libraries = []  #工程依赖第三方的library</span><br><span class="line">s.requires_arc = true  #工程是否用arc规则</span><br><span class="line">s.dependency &quot;AFNetworking&quot;, &quot;~&gt; 3.0&quot;  #工程依赖的第三方库</span><br></pre></td></tr></table></figure>
+<p>封装一个库最重要的还是source_files，把必须用到的文件导入到主工程。<br>其次就是资源文件resources、frameworks、libraries。<br>如果涉及到使用mrc的文件还需要设置一下requires_arc的参数  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.source_files  = &quot;Classes/**/*.&#123;h,m&#125;&quot;</span><br></pre></td></tr></table></figure>
+<p>这个配置表示在导入的时候会在Classes文件夹下找到所有的.h和.m文件并导入。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.public_header_files = &quot;Classes/**/*.h&quot;</span><br></pre></td></tr></table></figure>
+<p>这个配置只在打包framework的时候起作用，选择暴露出来的头文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.resources = &quot;Resources/*&quot;</span><br></pre></td></tr></table></figure>
+<p>这里配置工程的资源文件，包括图片、json文件、bundle文件等</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.frameworks = &quot;ImageIO&quot;</span><br></pre></td></tr></table></figure>
+<p>这个库依赖于系统库ImageIO，在pod入这个库的时候会带入这个系统库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.libraries = &quot;iconv&quot;, &quot;xml2&quot;</span><br></pre></td></tr></table></figure>
+<p>这个库依赖于系统Library iconv和xml2，在pod入这个库的时候会带入这个系统Library。注意这里Library的名字只取lib后面的字符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.dependency &quot;AFNetworking&quot;, &quot;~&gt; 3.0&quot;</span><br></pre></td></tr></table></figure>
+<p>工程依赖的第三方库，写法和podfile一致。</p>
 
     </article>
     <!-- license  -->
@@ -610,8 +622,17 @@ top:50vh;
         </li>
     
     
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
         <li class="archive-post-item">
-            <span class="archive-post-date">06/12</span><a class="archive-post-title" href= "/2018/06/12/hello-world/" >Hello World</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2018/06/15/cocoapods/" >优雅地使用Cocoapods</a>
         </li>
     
     
@@ -625,7 +646,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2018/06/15/cocoapods/" >优雅地使用Cocoapods</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2018/06/13/modularization/" >iOS组件化架构</a>
         </li>
     
     </div>
