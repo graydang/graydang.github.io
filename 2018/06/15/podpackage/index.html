@@ -267,7 +267,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count">523</span> / Reading time: <span class="post-count">2 min</span></span>
+                        <span>Word count: <span class="post-count">558</span> / Reading time: <span class="post-count">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -424,6 +424,8 @@ height:50vh;
 <li>最后需要打上spec里指定的tag</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &apos;version&apos;</span><br><span class="line">git tag -a version -m &apos;version&apos;</span><br></pre></td></tr></table></figure>
+<p>如果文件是本地文件没有在github上面，则source要指向本地文件路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.source = &#123; :git =&gt; &quot;/Users/XXX/XXX/XXX/XXXFramework&quot; &#125;</span><br></pre></td></tr></table></figure>
 <p>若提示以下错误请，打开Xcode-&gt;Preferences-&gt;Locations-&gt;command line tool设置一下版本。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unable to find utility &quot;simctl&quot;</span><br></pre></td></tr></table></figure>
     </article>
@@ -566,6 +568,8 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
     
     
     
