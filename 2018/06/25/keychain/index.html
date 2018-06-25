@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta name="Cache-Control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Gray&#39;s coding life.</title>
+    <title>使用KeyChain处理用户名和密码 · Gray&#39;s coding life.</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -70,6 +70,8 @@
 
     <link rel="preload" href= /css/style.css?v=20180604 as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href= /css/mobile.css?v=20180604 media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -194,14 +196,23 @@
 </head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Gray&#39;s coding life.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">使用KeyChain处理用户名和密码</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Gray's coding life.</a>
 </header>
@@ -222,17 +233,17 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Gray's coding life.
-            <!-- 文章页  -->
+            使用KeyChain处理用户名和密码
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -240,12 +251,49 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                Don't disturb me unless you finded a bug.
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "iOS">iOS</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count">385</span> / Reading time: <span class="post-count">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2018/06/25</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -346,247 +394,62 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/06/25/keychain/" >
-            
-                <span>使用KeyChain处理用户名和密码</span>
-        </a>
-        <div class="abstract-content">
-            ##KeyChain本地持久化用户名和密码是常见的需求。为什么不用NSUserDefault来保存用户名和密码呢？因为NSUserDefault可以在资料沙盒中找到。对应的沙盒路径：
-1Library -&gt; Preferences -&gt; bundleId.plist
-只要找到这个文件，储存在里面的信息便被盗取。另外，存在KeyChain里的信息是不会随APP被删除而删除的，还可以支持iCloud同步。
-###api用到的api有以下4个：
-1234SecItemAdd(CFDictionaryRef  _Nonnull attributes, CFTypeRef  _Null...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "iOS">iOS</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/06/21/modularization/" >
-            
-                <span>iOS组件化架构</span>
-        </a>
-        <div class="abstract-content">
-            ###放下叮铛这个项目也有一段时间了，现在写下这篇文章来分享一下组件化开发的一些心得。
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>##KeyChain<br>本地持久化用户名和密码是常见的需求。<br>为什么不用NSUserDefault来保存用户名和密码呢？因为NSUserDefault可以在资料沙盒中找到。<br>对应的沙盒路径：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Library -&gt; Preferences -&gt; bundleId.plist</span><br></pre></td></tr></table></figure>
+<p>只要找到这个文件，储存在里面的信息便被盗取。<br>另外，存在KeyChain里的信息是不会随APP被删除而删除的，还可以支持iCloud同步。</p>
+<p>###api<br>用到的api有以下4个：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SecItemAdd(CFDictionaryRef  _Nonnull attributes, CFTypeRef  _Nullable * _Nullable result)</span><br><span class="line">SecItemUpdate(CFDictionaryRef  _Nonnull query, CFDictionaryRef  _Nonnull attributesToUpdate)</span><br><span class="line">SecItemCopyMatching(CFDictionaryRef  _Nonnull query, CFTypeRef  _Nullable * _Nullable result)</span><br><span class="line">SecItemDelete(CFDictionaryRef  _Nonnull query)</span><br></pre></td></tr></table></figure>
+<p>查询：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NSMutableDictionary *query = [NSMutableDictionary new];</span><br><span class="line">[query setValue:service forKey:(__bridge id)kSecAttrService]; //标识</span><br><span class="line">[query setValue:account forKey:(__bridge id)kSecAttrAccount];//账户</span><br><span class="line">[query setValue:(__bridge id)kSecClassGenericPassword forKey:(__bridge id)kSecClass]; //储存密码</span><br><span class="line">[query setValue:(__bridge id)kCFBooleanTrue forKey:(__bridge id)kSecReturnData];//设置返回数据</span><br><span class="line">OSStatus status = SecItemCopyMatching((__bridge CFDictionaryRef)query, &amp;result);</span><br></pre></td></tr></table></figure>
+<p>增加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NSMutableDictionary *query = [NSMutableDictionary new];</span><br><span class="line">[query setValue:service forKey:(__bridge id)kSecAttrService]; //标识</span><br><span class="line">[query setValue:account forKey:(__bridge id)kSecAttrAccount];//账户</span><br><span class="line">[query setValue:(__bridge id)kSecClassGenericPassword forKey:(__bridge id)kSecClass]; //储存密码</span><br><span class="line">[query setValue:pwdData forKey:(__bridge id)kSecValueData];</span><br><span class="line">status = SecItemAdd((__bridge CFDictionaryRef)query, NULL);</span><br></pre></td></tr></table></figure>
+<p>更新：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">NSMutableDictionary *query = [NSMutableDictionary new];</span><br><span class="line">[query setValue:service forKey:(__bridge id)kSecAttrService]; //标识</span><br><span class="line">[query setValue:account forKey:(__bridge id)kSecAttrAccount];//账户</span><br><span class="line">[query setValue:(__bridge id)kSecClassGenericPassword forKey:(__bridge id)kSecClass]; //储存密码</span><br><span class="line">NSMutableDictionary *newQuery = [NSMutableDictionary dictionary];</span><br><span class="line">[newQuery setValue:pwdData forKey:(__bridge id)kSecValueData];</span><br><span class="line">status = SecItemUpdate((__bridge CFDictionaryRef)query, (__bridge CFDictionaryRef)newQuery);</span><br></pre></td></tr></table></figure>
+<p>删除：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">NSMutableDictionary *query = [NSMutableDictionary new];</span><br><span class="line">[query setValue:service forKey:(__bridge id)kSecAttrService]; //标识</span><br><span class="line">[query setValue:account forKey:(__bridge id)kSecAttrAccount];//账户</span><br><span class="line">[query setValue:(__bridge id)kSecClassGenericPassword forKey:(__bridge id)kSecClass]; //储存密码</span><br><span class="line">OSStatus status = SecItemDelete((__bridge CFDictionaryRef)query);</span><br></pre></td></tr></table></figure>
+<p><strong>demo地址：<a href="https://github.com/graydang/ioskeychain" target="_blank" rel="noopener">gray’s github</a></strong></p>
 
-什么是组件化开发？组件化开发是把各个关键的组件或功能分拆成一个单独的库来开发维护。为了降低项目的耦合度，复用性更高，可以脱离主工程开发而采用的一种开发模式。
-组件化开发有什么好处？  
-在做比较大的项目的时候，可以更加方便地管理各个功能。  
-其次在同时需要上几个大功能的情况下，如果都依赖于主工程去做开发，会出现两个功能上线的时候有冲突的问题。
-另外，某组件若依赖于主工程开发，则主工程有逻辑变动的时候，影响到组件的地方也需要人去维护。而功能库则是只开放api给主工程使用，不会直接往库里添加某些专用的...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "iOS">iOS</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/06/15/cocoapods/" >
-            
-                <span>优雅地使用Cocoapods</span>
-        </a>
-        <div class="abstract-content">
-            很多人都知道cocoapods，知道怎么写podfile，知道怎么引入库。下面来介绍下cocoapods的一些拓展用法。  
-###Podfile最基本的用法如下：
-1234567891011121314151617181920212223target &apos;BaseFramework&apos; do  # Uncomment the next line if you&apos;re using Swift or would like to use dynamic frameworks  # use_frameworks!  # Pods for BaseFramework  p...
+        <div class="license-wrapper">
+            <p>原文作者: <a href="https://graydang.github.io">Gray</a>
+            <p>原文链接: <a href="https://graydang.github.io/2018/06/25/keychain/">https://graydang.github.io/2018/06/25/keychain/</a>
+            <p>发表日期: <a href="https://graydang.github.io/2018/06/25/keychain/">June 25th 2018, 5:11:09</a>
+            <p>版权声明: 本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "iOS">iOS</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/06/15/podpackage/" >
-            
-                <span>使用podpackage打包工程库</span>
-        </a>
-        <div class="abstract-content">
-            ##使用podpackage打包工程库
-###准备工作  
-###安装cocoapods如果没有梯子的需要先执行以下命令，把下载资源替换成国内源。
-12gem sources --remove https://rubygems.org/gem sources -a https://gems.ruby-china.org/
-执行以下命令查看当前源，确保已经替换成功，否则再执行以上命令。
-1gem sources -l
-安装cocoapods，后面执行setup的时候时间稍长，文件大约600M。
-12sudo gem install cocoapodspod setup
-用podpackag...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "iOS">iOS</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/06/13/建立个人博客/" >
-            
-                <span>基于Hexo和github建立个人博客</span>
-        </a>
-        <div class="abstract-content">
-            ##基于Hexo和github建立个人博客
-
-首先创建一个git账户（地址: github官网）记得此时的username是会影响到后面的博客域名，尽量取个自己喜欢的吧
-创建仓库在登录账户后找到+号，然后点击New repository按钮仓库名是 =&gt; username.github.io(username是你的账户名)
-安装Git、Nodejs、Hexo(若未安装brew请先安装HomeBrew)  
-
-安装HomeBrew（mac使用这个来管理工具）
-1/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercont...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Git">Git</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/06/21/modularization/" title= iOS组件化架构 >
+                    <div class="prevTitle">iOS组件化架构</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!--PC版-->
+
+    <!--PC版-->
+
+
+    
+    <!-- 评论 -->
 </main>
             <!-- profile -->
-            
-            <div class="profile">
-    <img class="profile-avatar" src= /avatar/qWE4khGLigU.jpg >
-    <div class="profile-name">Gray</div>
-    
-    <div class="profile-signature">
-        Traveling and Coding
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
-            
-                <a href="mailto:denggray@163.com" class="iconfont-archer email" title=email ></a>
-            
-        
-    
-        
-            
-                <a href="//github.com/graydang" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-    </div>
-    
-    
-    
-        <div class="about-me">
-            <a href = "/about" >ABOUT ME</a>
-        </div>
-    
-</div>
             
         </div>
         <footer class="footer footer-unloaded">
@@ -654,6 +517,24 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -838,6 +719,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

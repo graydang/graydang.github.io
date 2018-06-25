@@ -339,6 +339,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/06/25/keychain/" >
+            
+                <span>使用KeyChain处理用户名和密码</span>
+        </a>
+        <div class="abstract-content">
+            ##KeyChain本地持久化用户名和密码是常见的需求。为什么不用NSUserDefault来保存用户名和密码呢？因为NSUserDefault可以在资料沙盒中找到。对应的沙盒路径：
+1Library -&gt; Preferences -&gt; bundleId.plist
+只要找到这个文件，储存在里面的信息便被盗取。另外，存在KeyChain里的信息是不会随APP被删除而删除的，还可以支持iCloud同步。
+###api用到的api有以下4个：
+1234SecItemAdd(CFDictionaryRef  _Nonnull attributes, CFTypeRef  _Null...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/25</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "iOS">iOS</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/06/21/modularization/" >
             
                 <span>iOS组件化架构</span>
@@ -556,9 +589,16 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 4
+        Total : 5
         <!-- search  -->
         </div>
             <div class="site-search popup-trigger">
@@ -573,6 +613,11 @@
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/25</span><a class="archive-post-title" href= "/2018/06/25/keychain/" >使用KeyChain处理用户名和密码</a>
+        </li>
     
     
         <li class="archive-post-item">
