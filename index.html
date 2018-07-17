@@ -359,13 +359,7 @@ height:50vh;
                 <span>利用Cocoapods生成依赖第三方库的Framework</span>
         </a>
         <div class="abstract-content">
-            解决打包自己的framework的时候需要依赖第三方framework或文件的问题。
-###第一步新建立一个本地Demo工程用于执行源码，创建demo工程目的是方便控制源码测试。然后将framework的必要文件添加到Demo工程目录下。例如：
-12Classes/*.&#123;h,m&#125;DemoProject/...
-执行以下命令初始化cocoapods环境
-1pod init
-然后编辑Podfile，把需要依赖的第三方库按规则编写，例如
-12pod &apos;GRKit&apos;, :path =&gt; &apos;../GRKit&apos;pod &apos;AF...
+            <p>解决打包自己的framework的时候需要依赖第三方framework或文件的问题。<br>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -394,11 +388,7 @@ height:50vh;
                 <span>使用KeyChain处理用户名和密码</span>
         </a>
         <div class="abstract-content">
-            ##KeyChain本地持久化用户名和密码是常见的需求。为什么不用NSUserDefault来保存用户名和密码呢？因为NSUserDefault可以在资料沙盒中找到。对应的沙盒路径：
-1Library -&gt; Preferences -&gt; bundleId.plist
-只要找到这个文件，储存在里面的信息便被盗取。另外，存在KeyChain里的信息是不会随APP被删除而删除的，还可以支持iCloud同步。
-###api用到的api有以下4个：
-1234SecItemAdd(CFDictionaryRef  _Nonnull attributes, CFTypeRef  _Null...
+            <p>本地持久化用户名和密码。<br>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -427,13 +417,7 @@ height:50vh;
                 <span>iOS组件化架构</span>
         </a>
         <div class="abstract-content">
-            ###放下叮铛这个项目也有一段时间了，现在写下这篇文章来分享一下组件化开发的一些心得。
-
-什么是组件化开发？组件化开发是把各个关键的组件或功能分拆成一个单独的库来开发维护。为了降低项目的耦合度，复用性更高，可以脱离主工程开发而采用的一种开发模式。
-组件化开发有什么好处？  
-在做比较大的项目的时候，可以更加方便地管理各个功能。  
-其次在同时需要上几个大功能的情况下，如果都依赖于主工程去做开发，会出现两个功能上线的时候有冲突的问题。
-另外，某组件若依赖于主工程开发，则主工程有逻辑变动的时候，影响到组件的地方也需要人去维护。而功能库则是只开放api给主工程使用，不会直接往库里添加某些专用的...
+            <p>组件化分享<br>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -462,14 +446,7 @@ height:50vh;
                 <span>优雅地使用Cocoapods</span>
         </a>
         <div class="abstract-content">
-            很多人都知道cocoapods，知道怎么写podfile，知道怎么引入库。下面来介绍下cocoapods的一些拓展用法。  
-###安装Cocoapods
-如果没有梯子的需要先执行以下命令，把下载资源替换成国内源。
-12gem sources --remove https://rubygems.org/gem sources -a https://gems.ruby-china.org/
-执行以下命令查看当前源，确保已经替换成功，否则再执行以上命令。
-1gem sources -l
-安装cocoapods，后面执行setup的时候时间稍长，文件大约600M，建议使用版本1.5以上。
-12...
+            <p>很多人都知道cocoapods，知道怎么写podfile，知道怎么引入库。下面来介绍下cocoapods的一些拓展用法。<br>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -498,15 +475,7 @@ height:50vh;
                 <span>使用podpackage打包工程库</span>
         </a>
         <div class="abstract-content">
-            ##使用podpackage打包工程库
-###准备工作  
-###安装cocoapods如果没有梯子的需要先执行以下命令，把下载资源替换成国内源。
-12gem sources --remove https://rubygems.org/gem sources -a https://gems.ruby-china.org/
-执行以下命令查看当前源，确保已经替换成功，否则再执行以上命令。
-1gem sources -l
-安装cocoapods，后面执行setup的时候时间稍长，文件大约600M。
-12sudo gem install cocoapodspod setup
-用podpackag...
+            <h2 id="使用podpackage打包工程库"><a href="#使用podpackage打包工程库" class="headerlink" title="使用podpackage打包工程库"></a>使用podpackage打包工程库</h2>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -535,14 +504,7 @@ height:50vh;
                 <span>基于Hexo和github建立个人博客</span>
         </a>
         <div class="abstract-content">
-            ##基于Hexo和github建立个人博客
-
-首先创建一个git账户（地址: github官网）记得此时的username是会影响到后面的博客域名，尽量取个自己喜欢的吧
-创建仓库在登录账户后找到+号，然后点击New repository按钮仓库名是 =&gt; username.github.io(username是你的账户名)
-安装Git、Nodejs、Hexo(若未安装brew请先安装HomeBrew)  
-
-安装HomeBrew（mac使用这个来管理工具）
-1/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercont...
+            <h2 id="基于Hexo和github建立个人博客"><a href="#基于Hexo和github建立个人博客" class="headerlink" title="基于Hexo和github建立个人博客"></a>基于Hexo和github建立个人博客</h2>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -705,6 +667,8 @@ height:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
     
     
     

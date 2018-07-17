@@ -267,7 +267,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count">820</span> / Reading time: <span class="post-count">3 min</span></span>
+                        <span>Word count: <span class="post-count">825</span> / Reading time: <span class="post-count">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -396,8 +396,8 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>###放下叮铛这个项目也有一段时间了，现在写下这篇文章来分享一下组件化开发的一些心得。</p>
-<ol>
+        <p>组件化分享<br><a id="more"></a></p>
+<h3 id="放下叮铛这个项目也有一段时间了，现在写下这篇文章来分享一下组件化开发的一些心得。"><a href="#放下叮铛这个项目也有一段时间了，现在写下这篇文章来分享一下组件化开发的一些心得。" class="headerlink" title="放下叮铛这个项目也有一段时间了，现在写下这篇文章来分享一下组件化开发的一些心得。"></a>放下叮铛这个项目也有一段时间了，现在写下这篇文章来分享一下组件化开发的一些心得。</h3><ol>
 <li>什么是组件化开发？<br>组件化开发是把各个关键的组件或功能分拆成一个单独的库来开发维护。<br>为了降低项目的耦合度，复用性更高，可以脱离主工程开发而采用的一种开发模式。</li>
 <li>组件化开发有什么好处？  <ul>
 <li>在做比较大的项目的时候，可以更加方便地管理各个功能。  </li>
@@ -406,7 +406,7 @@ height:50vh;
 </ul>
 </li>
 </ol>
-<p>##如何设计一个组件化架构<br>一个优秀的组件化架构应该是能把所有功能分拆到各个库，而主工程只是一个<strong>桥梁</strong>或者说是<strong>容器</strong>，去装载贯通各个功能库。库与库之间可以有依赖关系，但是不能相互依赖。比如说一个项目里面有最基本的网络请求类，图片加载类，约束类，公用方法类等…这些类可以抽出来作为BaseLibrary，即<strong>基础库</strong>。（有些工程师可能会觉得这些基本的类可以保留在主工程里，那么开发别的库需要用到这些类的时候还是变相地依赖了主工程。）  </p>
+<h2 id="如何设计一个组件化架构"><a href="#如何设计一个组件化架构" class="headerlink" title="如何设计一个组件化架构"></a>如何设计一个组件化架构</h2><p>一个优秀的组件化架构应该是能把所有功能分拆到各个库，而主工程只是一个<strong>桥梁</strong>或者说是<strong>容器</strong>，去装载贯通各个功能库。库与库之间可以有依赖关系，但是不能相互依赖。比如说一个项目里面有最基本的网络请求类，图片加载类，约束类，公用方法类等…这些类可以抽出来作为BaseLibrary，即<strong>基础库</strong>。（有些工程师可能会觉得这些基本的类可以保留在主工程里，那么开发别的库需要用到这些类的时候还是变相地依赖了主工程。）  </p>
 <p>下面列举一下一些可能可以抽出来的功能库：</p>
 <ul>
 <li>基础库（网络请求类，布局类，公用方法类，基础模型类）</li>
@@ -550,7 +550,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#放下叮铛这个项目也有一段时间了，现在写下这篇文章来分享一下组件化开发的一些心得。"><span class="toc-number">1.</span> <span class="toc-text">放下叮铛这个项目也有一段时间了，现在写下这篇文章来分享一下组件化开发的一些心得。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何设计一个组件化架构"><span class="toc-number"></span> <span class="toc-text">如何设计一个组件化架构</span></a>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -563,6 +563,8 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
     
     
     
