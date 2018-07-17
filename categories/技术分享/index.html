@@ -339,6 +339,41 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/07/17/ThirdFramework/" >
+            
+                <span>利用Cocoapods生成依赖第三方库的Framework</span>
+        </a>
+        <div class="abstract-content">
+            解决打包自己的framework的时候需要依赖第三方framework或文件的问题。
+###第一步新建立一个本地Demo工程用于执行源码，创建demo工程目的是方便控制源码测试。然后将framework的必要文件添加到Demo工程目录下。例如：
+12Classes/*.&#123;h,m&#125;DemoProject/...
+执行以下命令初始化cocoapods环境
+1pod init
+然后编辑Podfile，把需要依赖的第三方库按规则编写，例如
+12pod &apos;GRKit&apos;, :path =&gt; &apos;../GRKit&apos;pod &apos;AF...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/17</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "iOS">iOS</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/06/25/keychain/" >
             
                 <span>使用KeyChain处理用户名和密码</span>
@@ -413,8 +448,13 @@
         </a>
         <div class="abstract-content">
             很多人都知道cocoapods，知道怎么写podfile，知道怎么引入库。下面来介绍下cocoapods的一些拓展用法。  
-###Podfile最基本的用法如下：
-1234567891011121314151617181920212223target &apos;BaseFramework&apos; do  # Uncomment the next line if you&apos;re using Swift or would like to use dynamic frameworks  # use_frameworks!  # Pods for BaseFramework  p...
+###安装Cocoapods
+如果没有梯子的需要先执行以下命令，把下载资源替换成国内源。
+12gem sources --remove https://rubygems.org/gem sources -a https://gems.ruby-china.org/
+执行以下命令查看当前源，确保已经替换成功，否则再执行以上命令。
+1gem sources -l
+安装cocoapods，后面执行setup的时候时间稍长，文件大约600M，建议使用版本1.5以上。
+12...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -632,9 +672,10 @@
     
     
     
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 5
+        Total : 6
         <!-- search  -->
         </div>
             <div class="site-search popup-trigger">
@@ -647,8 +688,27 @@
     
     
     
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2018/06/15/cocoapods/" >优雅地使用Cocoapods</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/17</span><a class="archive-post-title" href= "/2018/07/17/ThirdFramework/" >利用Cocoapods生成依赖第三方库的Framework</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -668,20 +728,6 @@
     
         <li class="archive-post-item">
             <span class="archive-post-date">06/13</span><a class="archive-post-title" href= "/2018/06/13/建立个人博客/" >基于Hexo和github建立个人博客</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2018/06/15/cocoapods/" >优雅地使用Cocoapods</a>
         </li>
     
     </div>
